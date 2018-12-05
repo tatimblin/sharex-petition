@@ -1,0 +1,48 @@
+.site {
+  position: relative;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+.container {
+  .content {
+      margin: $spacing*2 auto;
+      padding: 0 30px;
+
+      &.sm-width {
+          max-width: $sm-width;
+      }
+      &.md-width {
+          max-width: $md-width;
+      }
+      &.lg-width {
+          max-width: $lg-width;
+      }
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+// NAVIGATION
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn a {
+  padding: 0.625em 1.5em;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.0625em;
+  color: $brand;
+  text-decoration: none;
+  border-radius: 35px;
+  border: 2px solid $brand;
+  &:hover {
+    background-color: $brand;
+    color: $white;
+  }
+}

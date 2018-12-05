@@ -1,0 +1,25 @@
+$white: #fefefe;
+$black: #161616;
+$grey: lighten($black, 60%);
+$brand: #4BA62E;
+
+$sm-width: 460px;
+$md-width: 768px;
+$lg-width: 920px;
+
+$spacing: 30px;
+
+@mixin query($device) {
+    @media screen and (min-width: $device) {
+        @content;
+    }
+}
+
+$ease: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+  'reset',
+  'type',
+  'general'
+;

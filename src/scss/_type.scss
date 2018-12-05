@@ -1,0 +1,69 @@
+$site-font: 'Montserrat', sans-serif;
+
+body {
+    font-family: $site-font;
+    font-size: calc(12px + 1.5vw);
+    font-variant-ligatures: no-common-ligatures;
+}
+
+h1 {
+    margin: 0 0 $spacing 0;
+    font-size: 3.5em;
+    font-weight: 500;
+    line-height: 1.125em;
+    @include query ($sm-width) {
+        font-size: 3.75em;
+        line-height: 1.125em;
+    }
+    @include query ($md-width) {
+        font-size: 4em;
+    }
+}
+
+h2 {
+    font-size: 1em;
+}
+
+h3 {
+    font-size: 1.625em;
+    margin: 0 0 $spacing/2 0;
+
+    @include query ($md-width) {
+        margin: 0 0 $spacing 0;
+        font-size: 4em;
+    }
+}
+
+h4 {
+    font-size: 2.125em;
+}
+
+p {
+    margin: 1.25em 0;
+    font-weight: 300;
+    line-height: 1.625em;
+
+    @include query ($md-width) {
+        line-height: 1.5em;
+    }
+}
+
+small {
+    display: inline-block;
+    margin: $spacing/2 0 0 0;
+    font-size: 0.625em;
+    letter-spacing: 0.0375em;
+    line-height: 1.75em; 
+
+    @include query ($md-width) {
+        font-size: 0.5em;
+    }
+}
+
+a {
+  color: $grey;
+  transition: all 200ms $ease;
+  &:hover {
+    color: $brand;
+  }
+}
