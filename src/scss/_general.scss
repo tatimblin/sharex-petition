@@ -1,6 +1,13 @@
+.header {
+  max-width: $lg-width;
+  margin: $spacing auto 0 auto;
+  padding: 0 $spacing;
+}
+
 .site {
   position: relative;
   max-width: 100% !important;
+  margin-top: $spacing;
   overflow-x: hidden !important;
 }
 
@@ -28,10 +35,25 @@
 // NAVIGATION
 .nav {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column-reverse;
+  align-items: center;
+  max-width: $lg-width;
+  border-bottom: 1px solid $grey;
+
+  @include query ($md-width) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__item {
+    margin-bottom: $spacing;
+    img {
+      width: 90px;
+    }
+  }
 }
 
-.btn a {
+%btn {
   padding: 0.625em 1.5em;
   font-size: 18px;
   text-transform: uppercase;
@@ -44,5 +66,46 @@
   &:hover {
     background-color: $brand;
     color: $white;
+  }
+}
+
+.btn a {
+  @extend %btn;
+}
+
+
+// FORM
+.sign {
+  background-color: lighten($brand, 47%);
+  border-radius: 3px;
+}
+
+form {
+  padding: $spacing 0;
+
+  .sign__field {
+    padding: $spacing/2 0;
+
+    &__text {
+      display: block;
+      padding: 0 $spacing/2 $spacing/2 $spacing/2;
+      font-size: 14px;
+    }
+    &__check {
+      font-size: 14px;
+    }
+    input[type=text], input[type=email] {
+      width: 100%;
+      padding: $spacing/2;
+      box-sizing: border-box;
+      font-size: 1.25em;
+      border-radius: 2px;
+      border: 1px solid $grey;
+    }
+  }
+  input[type=submit] {
+    @extend %btn;
+    margin-top: $spacing/2;
+    background-color: lighten($brand, 47%);
   }
 }
