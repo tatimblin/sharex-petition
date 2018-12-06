@@ -25,8 +25,5 @@ ScrollReveal().watch = function (target, onEnter, onExit) {
 ScrollReveal().watch('.petition__passage span',
   function onEnter (el) {
       el.classList.add('active')
-  },
-  function onExit (el) {
-      el.classList.remove('active')
   }
 )
