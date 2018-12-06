@@ -1,0 +1,59 @@
+.hero {
+  background-image: url('../../assets/background.png');
+
+  &__title {
+    padding: $spacing*3 0;
+
+    h1 {
+      display: inline-block;
+      padding: 0 $spacing/2;
+      background-color: $white;
+
+      &:last-child {
+        margin: 0;
+      }
+  
+      span {
+        color: $brand;
+      }
+    }
+  }
+}
+
+.petition__passage {
+  span {
+    display: inline;
+    position: relative;
+    background-image: linear-gradient(to left, $brand, $brand);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0px 100%;
+    transition: all 2s 0ms $ease;
+  }
+  span.active {
+    animation: highlight 2s 300ms $ease forwards;
+  }
+}
+
+@keyframes highlight {
+  0% {
+    color: $black;
+    background-size: 0px 100%;
+    background-position: 0% 100%;
+  }
+  30% {
+    color: $white;
+    background-size: 100% 100%;
+    background-position: 0% 100%;
+  }
+  70% {
+    color: $white;
+    background-size: 100% 100%;
+    background-position: 100% 100%;
+  }
+  100% {
+    color: $black;
+    background-size: 0px 100%;
+    background-position: 100% 100%;
+  }
+}

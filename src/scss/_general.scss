@@ -7,8 +7,11 @@
 .site {
   position: relative;
   max-width: 100% !important;
-  margin-top: $spacing;
   overflow-x: hidden !important;
+
+  @include query ($sm-width) {
+    margin-top: $spacing;
+  }
 }
 
 .container {
@@ -25,6 +28,9 @@
       &.lg-width {
           max-width: $lg-width;
       }
+      &.xl-width {
+        max-width: 1400px;
+    }
   }
 }
 
@@ -35,14 +41,15 @@
 // NAVIGATION
 .nav {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   align-items: center;
   max-width: $lg-width;
-  border-bottom: 1px solid $grey;
+  border-bottom: none;
 
   @include query ($md-width) {
     flex-direction: row;
     justify-content: space-between;
+    border-bottom: 1px solid $grey;
   }
 
   &__item {
@@ -63,6 +70,7 @@
   text-decoration: none;
   border-radius: 35px;
   border: 2px solid $brand;
+  transition: all 200ms $ease;
   &:hover {
     background-color: $brand;
     color: $white;
